@@ -53,3 +53,7 @@ def data_analysis(df):
     print("Lowest correlated are: ")
     for ind, tuple in enumerate(bottom5):
         print(f"{ind+1}. {tuple[0]} with {tuple[1]:.6f}")
+    avg_season_t_diff = df.groupby("season_name")["t_diff"].agg("mean")
+    for (season, t_diff) in avg_season_t_diff.items():
+        print(f"{season} average t_diff is {t_diff:.2f}")
+    print("All average t_diff is",df["t_diff"].mean(),)
