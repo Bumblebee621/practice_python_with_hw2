@@ -74,16 +74,15 @@ def visualize_results(data, labels, centroids, path):
     # plt.savefig(path)
 
 
-def dist(x, y):
+def dist(x, y, axis =0):
     """
-    Euclidean distance between vectors x, y
+    Euclidean distance between matrices x, y
+    :param axis:
     :param x: numpy array of size n
     :param y: numpy array of size n
     :return: the Euclidean distance
     """
-    return np.linalg.norm(x-y)
-    # return distance
-
+    return np.linalg.norm(x-y, axis= axis)
 
 def assign_to_clusters(data, centroids):
     """
@@ -92,8 +91,13 @@ def assign_to_clusters(data, centroids):
     :param centroids: current centroids as numpy array of shape (k, 2)
     :return: numpy array of size n
     """
-    pass
-    # return labels
+
+
+
+
+    diffs = dist(data[:,np.newaxis,:], centroids[np.newaxis,:,:],2)
+    labels = np.argmin(diffs,axis=1)
+    return labels
 
 
 def recompute_centroids(data, labels, k):
@@ -104,6 +108,10 @@ def recompute_centroids(data, labels, k):
     :param k: number of clusters
     :return: numpy array of shape (k, 2)
     """
-    pass
-    # return centroids
+    centroids = np.array([data[labels == i].mean() for i in range(k)])
+
+    for i in range(k):
+        cluster = data.where(labels == i)
+        centroids[i] = np.mean(cluster)
+    return centroids
 
