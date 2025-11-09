@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bce487b1-c67b-41bd-a33f-c010cf0a63cc" name="Changes" comment="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clustering.py" beforeDir="false" afterPath="$PROJECT_DIR$/clustering.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/data.py" afterDir="false" />
+    <list default="true" id="bce487b1-c67b-41bd-a33f-c010cf0a63cc" name="Changes" comment="V1.0&#10;cosmetic fixes in data_analysis&#10;finalized Kmeans&#10;a fix in transform_data&#10;vectorized recompute_centroids&#10;added visualize_results">
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results_k2.png" beforeDir="false" afterPath="$PROJECT_DIR$/results_k2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results_k3.png" beforeDir="false" afterPath="$PROJECT_DIR$/results_k3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results_k5.png" beforeDir="false" afterPath="$PROJECT_DIR$/results_k5.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +124,7 @@
       <workItem from="1759928412564" duration="2625000" />
       <workItem from="1760776521872" duration="746000" />
       <workItem from="1762629785300" duration="597000" />
-      <workItem from="1762707381107" duration="5639000" />
+      <workItem from="1762707381107" duration="6489000" />
     </task>
     <task id="LOCAL‎-00001" summary="added clustering.py">
       <option name="closed" value="true" />
@@ -214,7 +214,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1762707826107</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL‎-00012" summary="V1.0&#10;cosmetic fixes in data_analysis&#10;finalized Kmeans&#10;a fix in transform_data&#10;vectorized recompute_centroids&#10;added visualize_results">
+      <option name="closed" value="true" />
+      <created>1762713916469</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL‎-00012" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1762713916469</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,10 +251,11 @@
     <MESSAGE value="finished data_analysis" />
     <MESSAGE value="vectorizing" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+    <MESSAGE value="V1.0&#10;cosmetic fixes in data_analysis&#10;finalized Kmeans&#10;a fix in transform_data&#10;vectorized recompute_centroids&#10;added visualize_results" />
+    <option name="LAST_COMMIT_MESSAGE" value="V1.0&#10;cosmetic fixes in data_analysis&#10;finalized Kmeans&#10;a fix in transform_data&#10;vectorized recompute_centroids&#10;added visualize_results" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PythonProject$data.coverage" NAME="data Coverage Results" MODIFIED="1759915624613" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/PythonProject$main.coverage" NAME="main Coverage Results" MODIFIED="1762713505694" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PythonProject$main.coverage" NAME="main Coverage Results" MODIFIED="1762715964072" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

@@ -4,7 +4,7 @@ from clustering import *
 
 
 def main():
-    data = load_data("london_sample_500.csv")
+    data = load_data("london.csv")
     data = add_new_columns(data)
     print("Part A:")
     data_analysis(data)
