@@ -35,7 +35,7 @@ def transform_data(df, features):
     :param features: list of 2 features from the dataframe
     :return: transformed data as numpy array of shape (n, 2)
     """
-    data = df[features].to_numpy
+    data = df[features].to_numpy()
     minimum = np.min(data, axis=0)
     maximum = np.max(data, axis=0)
     data = (data - minimum)/(maximum - minimum)
@@ -53,7 +53,7 @@ def kmeans(data, k):
     * centroids - numpy array of shape (k, 2), centroid for each cluster.
     """
     centroids = choose_initial_centroids(data, k)
-    prev_cent = []
+    prev_cent = [[]]
     labels = []
     while not np.array_equal(prev_cent, centroids):
         prev_cent = centroids
@@ -70,8 +70,39 @@ def visualize_results(data, labels, centroids, path):
     :param centroids: the final centroids of kmeans, as numpy array of shape (k, 2)
     :param path: path to save the figure to.
     """
-    pass
-    # plt.savefig(path)
+    # Create a new figure
+    plt.figure(figsize=(8, 6))
+
+    # Plot data points, colored by their cluster label
+    scatter = plt.scatter(
+        data[:, 0], data[:, 1],
+        c=labels,
+        cmap='tab10',  # distinct colors for clusters
+        s=30,  # point size
+        alpha=0.8
+    )
+
+    # Plot centroids
+    plt.scatter(
+        centroids[:, 0], centroids[:, 1],
+        c='black', marker='X',
+        s=200, linewidths=2,
+        label='Centroids'
+    )
+
+    # Add labels and title
+    plt.xlabel("cnt")
+    plt.ylabel("t1")
+    plt.title("K-Means Clustering Results")
+    plt.legend()
+    plt.grid(True, linestyle='--', alpha=0.3)
+
+    # Save the figure
+    plt.savefig(path)
+
+    # Close all figures to avoid overlap in repeated runs
+    plt.close('all')
+
 
 
 def dist(x, y, axis =0):
@@ -104,6 +135,6 @@ def recompute_centroids(data, labels, k):
     :param k: number of clusters
     :return: numpy array of shape (k, 2)
     """
-    centroids = np.array([data[labels == i].mean() for i in range(k)])
+    centroids = np.array([data[labels == i].mean(axis=0) for i in range(k)])
     return centroids
 
