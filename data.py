@@ -10,7 +10,6 @@ def add_new_columns(df):
     #2
     dic = {0: "spring", 1: "summer", 2: "fall", 3: "winter"}
     df["season_name"] = df["season"].apply(lambda x: dic[x])
-
     #3
     df["timestamp"] = pd.to_datetime(df["timestamp"], format="%d/%m/%Y %H:%M")
     # now extract hour, date parts
@@ -18,7 +17,8 @@ def add_new_columns(df):
     df["Day"] = df["timestamp"].dt.day
     df["Month"] = df["timestamp"].dt.month
     df["Year"] = df["timestamp"].dt.year
-
+    #drop now redundant timestamp column
+    df = df.drop("timestamp", axis=1)
     #4
     df["is_weekend_holiday"] = 1 + df["is_weekend"].apply(lambda x: 1 if x else 0) + 2* df["is_holiday"].apply(lambda x: 1 if x else 0)
     #5
@@ -50,10 +50,13 @@ def data_analysis(df):
     print("Highest correlated are: ")
     for ind, tuple in enumerate(top5):
         print(f"{ind+1}. {tuple[0]} with {tuple[1]:.6f}")
+    print()
     print("Lowest correlated are: ")
     for ind, tuple in enumerate(bottom5):
         print(f"{ind+1}. {tuple[0]} with {tuple[1]:.6f}")
+    print()
     avg_season_t_diff = df.groupby("season_name")["t_diff"].agg("mean")
     for (season, t_diff) in avg_season_t_diff.items():
         print(f"{season} average t_diff is {t_diff:.2f}")
-    print("All average t_diff is",df["t_diff"].mean(),)
+    print(f"All average t_diff is {df["t_diff"].mean():.2f}")
+    print()
